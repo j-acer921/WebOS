@@ -19,8 +19,8 @@
          <p style="margin-left: 4-px;">
             Help
         </p> 
-        <p style="margin-right: 16px;">
-             6/16/2026 7:41 PM
+         <p id="timeElement" style="margin-right: 4px;">
+            Time
         </p>
         </div>
 
@@ -33,9 +33,14 @@
     </div>
   
     <script>
-
-    var currentTime = new Date().toLocaleString();
     
+    function updateTime() {
+        var currentTime = new Date().toLocaleString();
+        var timeText = document.querySelector("#timeElement");
+        timeText.innerHTML = currentTime;
+    }
+    setInterval(updateTime, 1000);
+
     </script>
 
   </body>
